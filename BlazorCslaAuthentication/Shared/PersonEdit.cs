@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using Csla;
 using Csla.Rules;
@@ -17,7 +18,8 @@ namespace BlazorCslaAuthentication.Shared
     }
 
     [ObjectAuthorizationRules]
-    private static void PerTypeRules()
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public static void AddPerTypeRules()
     {
       Csla.Rules.BusinessRules.AddRule(
         typeof(PersonEdit),
